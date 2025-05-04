@@ -8,6 +8,7 @@ const data = {
 
 // setup()
 data.layout.value = 'main';
+provide('layoutType', data.layout); // 하위 모든 페이지에서 inject로 받을 수 있음
 onMounted(() => {
   runtimeConfig.public.apiBase = '/api2';
   appConfig.title = 'Hello Nuxt 2';
@@ -17,10 +18,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <div style="width: 100vw; height: 100vh">
-    <NuxtLayout :name="data.layout">
-      <NuxtPage />
-    </NuxtLayout>
+  <div>
+    <!-- v-app: Vuetify 용. v-app-bar 사용 시 필요 -->
+    <v-app>
+      <NuxtLoadingIndicator />
+      <NuxtLayout :name="data.layout">
+        <NuxtPage :style="data.layout.value === 'main' ? 'margin-top: 64px;' : ''" />
+      </NuxtLayout>
+    </v-app>
   </div>
 </template>
 
