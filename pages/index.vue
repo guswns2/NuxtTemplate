@@ -1,8 +1,9 @@
 <script setup lang="ts">
-const layoutType = inject('layoutType') as Ref<string>;
+const layoutType = inject('layoutType') as string;
 
 // setup()
-navigateTo({ path: `/${layoutType.value}` });
+// app.vue의 layout 값에 따라 라우팅 경로 설정
+navigateTo({ path: `/${layoutType}` });
 </script>
 
 <template>
