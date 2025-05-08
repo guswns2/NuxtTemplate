@@ -8,12 +8,12 @@ const data = {
 
 // setup()
 data.layout.value = 'main';
-provide('layoutType', data.layout); // 하위 모든 페이지에서 inject로 받을 수 있음
+provide('layoutType', data.layout.value); // 하위 모든 페이지에서 inject로 받을 수 있음
 onMounted(() => {
   runtimeConfig.public.apiBase = '/api2';
   appConfig.title = 'Hello Nuxt 2';
-  console.log(runtimeConfig.public.apiBase);
-  console.log(appConfig.title);
+  utils.log(runtimeConfig.public.apiBase);
+  utils.log(appConfig.title);
 });
 </script>
 
