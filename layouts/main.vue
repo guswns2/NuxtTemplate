@@ -43,6 +43,7 @@ const func = {
       </v-menu>
     </v-btn>
   </v-app-bar>
+
   <slot />
 </template>
 

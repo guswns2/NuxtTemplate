@@ -23,10 +23,21 @@ onMounted(() => {
     <v-app>
       <NuxtLoadingIndicator />
       <NuxtLayout :name="data.layout">
-        <NuxtPage :style="data.layout.value === 'main' ? 'margin-top: 64px;' : ''" />
+        <NuxtPage class="nuxt-page" :style="[data.layout.value === 'main' ? 'margin-top: 64px;' : '']" />
       </NuxtLayout>
     </v-app>
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+html,
+body {
+  overflow: hidden;
+}
+
+.nuxt-page {
+  background-color: red;
+  flex: 1 0 200px;
+  overflow-y: auto;
+}
+</style>
