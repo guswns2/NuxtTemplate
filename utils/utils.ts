@@ -2,6 +2,11 @@
  * 범용적으로 사용하는 Utils...
  */
 export const utils = {
+  /**
+   * console log 표시
+   * @param data any[]
+   * @return
+   */
   log(...data: any[]) {
     // if (webConfig.isLog) {
     //   //console.log(utils.log.caller);
@@ -29,8 +34,8 @@ export const utils = {
   },
   /**
    * string, object, array empty 체크
-   * @param value
-   * @returns
+   * @param value any
+   * @return boolean
    */
   isEmpty(value: any): boolean {
     if (value === undefined || value === null) {
