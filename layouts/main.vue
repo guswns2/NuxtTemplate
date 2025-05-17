@@ -4,11 +4,21 @@ const layoutType = inject('layoutType') as string;
 const data = {
   menuList: [
     {
+      title: 'Project',
+      path: 'project',
+      menuList: [
+        { title: 'Nuxt', path: 'nuxt' },
+        { title: 'Git', path: 'git' }
+      ]
+    },
+    {
       title: 'Language',
       path: 'language',
       menuList: [
         { title: 'JavaScript', path: 'javascript' },
-        { title: 'TypeScript', path: 'typescript' }
+        { title: 'TypeScript', path: 'typescript' },
+        { title: 'CSS', path: 'css' },
+        { title: 'SCSS', path: 'scss' }
       ]
     }
   ]
