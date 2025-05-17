@@ -36,7 +36,6 @@ body {
 }
 
 .nuxt-page {
-  background-color: red;
   flex: 1 0 200px;
   overflow-y: auto;
 }
