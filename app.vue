@@ -36,7 +36,8 @@ body {
 }
 
 .nuxt-page {
-  flex: 1 0 200px;
+  flex: 1;
   overflow-y: auto;
+  padding: 10px;
 }
 </style>
