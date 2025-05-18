@@ -1,11 +1,25 @@
 <script setup lang="ts">
 import { marked } from 'marked';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github-dark.css'; // 코드블럭 테마
 
 const props = defineProps<{
   rawMarkdown: string;
 }>();
 
-const compiledMarkdown = computed(() => marked(props.rawMarkdown));
+// ✅ 타입 추론을 위해 Renderer 클래스를 사용
+const renderer = new marked.Renderer();
+renderer.code = ({ text, lang }) => {
+  const validLang = lang && hljs.getLanguage(lang) ? lang : 'plaintext';
+  const highlighted = hljs.highlight(text, { language: validLang }).value;
+  return `<pre><code class="hljs ${validLang}">${highlighted}</code></pre>`;
+};
+// 옵션 적용 시 Renderer 사용
+const compiledMarkdown = computed(() =>
+  marked.parse(props.rawMarkdown, {
+    renderer
+  })
+);
 </script>
 
 <template>
@@ -27,13 +41,16 @@ const compiledMarkdown = computed(() => marked(props.rawMarkdown));
     border-bottom: 1px solid #eaecef;
     margin-bottom: 10px;
   }
-
   h2,
   h3,
   h4,
   h5,
   h6 {
     margin-top: 20px;
+  }
+
+  pre {
+    background-color: #f6f8fa;
   }
 }
 </style>
