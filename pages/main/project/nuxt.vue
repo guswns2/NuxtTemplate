@@ -1,23 +1,11 @@
 <script setup lang="ts">
-import { marked } from 'marked';
-
-const rawMarkdown = ref(`# 제목
-**굵게**, _기울임_, [링크](https://example.com)
-
-\`\`\`java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-\`\`\``);
-const compiledMarkdown = computed(() => marked(rawMarkdown.value));
+import markdownContent from '~/README.md?raw';
 </script>
 
 <template>
   <div>
     <h1>nuxt page</h1>
-    <div v-html="compiledMarkdown" class="markdown-content" />
+    <MarkdownContent :rawMarkdown="markdownContent"></MarkdownContent>
   </div>
 </template>
 
