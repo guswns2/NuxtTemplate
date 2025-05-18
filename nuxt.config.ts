@@ -23,7 +23,8 @@ export default defineNuxtConfig({
         // 파일 경로 별칭 설정정
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
-    }
+    },
+    assetsInclude: ['**/*.md'] // 마크다운 파일을 문자열로 파싱
   },
 
   // SSR or SPA 설정
