@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   vite: {
     resolve: {
       alias: {
-        // 파일 경로 별칭 설정정
+        // 파일 경로 별칭 설정
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
     },

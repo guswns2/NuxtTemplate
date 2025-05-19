@@ -31,6 +31,7 @@ const compiledMarkdown = computed(() =>
 <style lang="scss" scope>
 .markdown-content {
   padding: 8px;
+  background-color: #eeeeee;
 
   h1,
   h2,
@@ -38,7 +39,7 @@ const compiledMarkdown = computed(() =>
   h4,
   h5,
   h6 {
-    border-bottom: 1px solid #eaecef;
+    border-bottom: 1px solid #cacaca;
     margin-bottom: 10px;
   }
   h2,
