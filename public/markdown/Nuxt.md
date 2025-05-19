@@ -1,6 +1,6 @@
 # Nuxt
 
-## 빌드 도구, 번들러
+## Build Tool, Bundler
 
 Nuxt.js 3는 기본적으로 Vite를 빌드 도구로 사용
 
@@ -46,9 +46,9 @@ Nuxt.js 3는 기본적으로 Vite를 빌드 도구로 사용
 
 빌드 시 (build): Rollup을 이용해 최종 번들 파일 생성
 
-## 프로젝트 버전
+## Project Version
 
-### Nuxt, Vue 버전 업데이트
+### Nuxt, Vue Version Update
 
 ```bash
 npm list nuxt, vue    // 현재 버전 확인
@@ -58,7 +58,7 @@ npm install nuxt@(버전), vue@(버전)     // 특정 버전 설치
 npm install nuxt@latest vue@latest    // 최신 버전 설치
 ```
 
-### npm 버전 업데이트
+### NPM Version Update
 
 ```bash
 npm -v    // 현재 버전 확인
@@ -75,7 +75,7 @@ devDependencies: 앱을 개발(build-time) 할 때만 필요한 패키지 타입
 
 (npm install -D, --save-dev)
 
-## 프로젝트 설정
+## Project Setting
 
 ### nuxt.config.ts
 
@@ -122,7 +122,7 @@ Code Snippet 설정 - 파일 > 기본 설정 > 코드 조각 설정
 
 그 외 Lint 설정, .env 환경 변수 설정 등
 
-## Vue.js 3 라이프사이클
+## Vue.js 3 LifeCycle
 
 setup(): 컴포넌트 생성 시, 가장 먼저 실행됨 (Vue2의 created, beforeCreate가 통합됨)
 

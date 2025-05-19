@@ -4,14 +4,6 @@ const layoutType = inject('layoutType') as string;
 const data = {
   menuList: [
     {
-      title: 'Project',
-      path: 'project',
-      menuList: [
-        { title: 'Nuxt', path: 'nuxt' },
-        { title: 'Git', path: 'git' }
-      ]
-    },
-    {
       title: 'Language',
       path: 'language',
       menuList: [
@@ -20,6 +12,14 @@ const data = {
         { title: 'TypeScript', path: 'typescript' },
         { title: 'CSS', path: 'css' },
         { title: 'SCSS', path: 'scss' }
+      ]
+    },
+    {
+      title: 'Project',
+      path: 'project',
+      menuList: [
+        { title: 'Nuxt', path: 'nuxt' },
+        { title: 'Git', path: 'git' }
       ]
     }
   ]
@@ -58,12 +58,14 @@ const func = {
 
 <style lang="scss" scope>
 .v-toolbar__content > .v-toolbar-title {
-  margin-inline-start: 10px;
+  margin: 0 30px 0 10px !important;
+  flex: 0 0 auto;
 
   .v-toolbar-title__placeholder {
     display: flex;
     align-items: center;
     cursor: pointer;
+    width: fit-content;
 
     img {
       margin-right: 5px;
