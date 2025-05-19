@@ -15,6 +15,7 @@ const data = {
       title: 'Language',
       path: 'language',
       menuList: [
+        { title: 'HTML', path: 'html' },
         { title: 'JavaScript', path: 'javascript' },
         { title: 'TypeScript', path: 'typescript' },
         { title: 'CSS', path: 'css' },
