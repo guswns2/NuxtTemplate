@@ -7,6 +7,7 @@ Nuxt.js 3는 기본적으로 Vite를 빌드 도구로 사용
 설정을 통해 Vite 대신 Webpack도 선택적으로 사용 가능
 
 <br>
+
 🔧 빌드 도구 (Build Tool)
 
 정의: 프론트엔드 프로젝트를 개발 → 배포 가능한 형태로 만드는 전체 프로세스를 자동화하는 도구
@@ -17,6 +18,7 @@ Nuxt.js 3는 기본적으로 Vite를 빌드 도구로 사용
 종류: Vite, Parcel, Gulp, Webpack (Webpack은 빌드 도구이자 번들러)
 
 <br>
+
 📦 번들러 (Bundler)
 정의: 여러 개의 JS/TS/CSS 모듈을 하나의 파일 또는 몇 개의 파일로 묶어주는 도구
 
@@ -25,6 +27,7 @@ Nuxt.js 3는 기본적으로 Vite를 빌드 도구로 사용
 종류: Webpack, Rollup, ESBuild
 
 <br>
+
 ✅ Webpack
 빌드 도구 O, 번들러 O
 
@@ -33,6 +36,7 @@ Nuxt.js 3는 기본적으로 Vite를 빌드 도구로 사용
 의존성 그래프 분석, 번들 생성, 트리 셰이킹 등 모두 자체적으로 수행
 
 <br>
+
 ✅ Vite
 빌드 도구 O, 번들러 X
 
@@ -64,6 +68,7 @@ npm install -g npm    // 최신 버전 설치
 ```
 
 <br>
+
 dependencies: 앱이 실행(run-time) 되는 데 필요한 패키지 (nuxt, vue, vuetify-nuxt-module 등)
 
 devDependencies: 앱을 개발(build-time) 할 때만 필요한 패키지 타입 (타입 정의, 빌드 도구, 린터 등)
