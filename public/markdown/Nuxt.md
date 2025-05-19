@@ -63,6 +63,13 @@ npm install -g npm@(버전)    // 특정 버전으로 변경
 npm install -g npm    // 최신 버전 설치
 ```
 
+<br>
+dependencies: 앱이 실행(run-time) 되는 데 필요한 패키지 (nuxt, vue, vuetify-nuxt-module 등)
+
+devDependencies: 앱을 개발(build-time) 할 때만 필요한 패키지 타입 (타입 정의, 빌드 도구, 린터 등)
+
+(npm install -D, --save-dev)
+
 ## 프로젝트 설정
 
 ### nuxt.config.ts

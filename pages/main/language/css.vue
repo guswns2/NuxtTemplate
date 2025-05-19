@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import markdownContent from '~/public/markdown/CSS.md?raw';
+</script>
 
 <template>
   <div>
-    <h1>css page</h1>
+    <MarkdownContent :rawMarkdown="markdownContent"></MarkdownContent>
   </div>
 </template>
 
