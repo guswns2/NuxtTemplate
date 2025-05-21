@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import markdownContent from '~/public/markdown/JavaScript.md?raw';
+import markdownContent from '~/public/markdown/HTML.md?raw';
 </script>
 
 <template>

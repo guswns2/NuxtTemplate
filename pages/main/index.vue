@@ -1,9 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import markdownContent from '~/README.md?raw';
+</script>
 
 <template>
   <div>
-    <h1>main page</h1>
-    <!-- <div style="height: 200px; background-color: blue">main div</div> -->
+    <MarkdownContent :rawMarkdown="markdownContent"></MarkdownContent>
   </div>
 </template>
 

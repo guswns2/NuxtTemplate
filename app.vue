@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="app-div">
     <!-- v-app: Vuetify 용. v-app-bar 사용 시 필요 -->
     <v-app>
       <NuxtLoadingIndicator />
@@ -30,14 +30,32 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+// 화면 레이아웃, 스크롤바
 html,
 body {
+  height: 100vh;
   overflow: hidden;
-}
 
-.nuxt-page {
-  flex: 1;
-  overflow-y: auto;
-  padding: 10px;
+  #__nuxt {
+    height: 100%;
+
+    .app-div {
+      height: 100%;
+
+      .v-application {
+        height: 100%;
+
+        .v-application__wrap {
+          height: 100%;
+
+          .nuxt-page {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
