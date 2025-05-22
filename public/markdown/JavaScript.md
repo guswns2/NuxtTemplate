@@ -153,9 +153,7 @@ console.log(arr); // [2, 4, 6]
 
 ### 화살표 함수
 
-화살표 함수 표현은 함수 표현식에 비해 짧은 문법을 가지고 있고 사전적으로 this 값을 묶음
-
-화살표 함수는 언제나 익명
+화살표 함수 표현은 함수 표현식에 비해 짧은 문법
 
 ```javascript
 var a = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium'];
@@ -170,8 +168,42 @@ var a3 = a.map((s) => s.length);
 console.log(a3); // logs [8, 6, 7, 9]
 ```
 
+<br>
+
+화살표 함수는 언제나 익명
+
+화살표 함수에는 this가 존재하지 않음. this 키워드로 접근하면, 자신이 아닌 외부에서 값을 가져옴
+
+화살표 함수엔 arguments 가 없음. 대신에 나머지 매개변수(...args) 사용
+
+화살표 함수는 객체를 생성하는 용도로 사용할 수 없다.
+
+화살표 함수를 addEventListener 함수의 콜백 함수로 사용할 때도 주의 필요
+
+addEventListener 함수는 이벤트가 발생할 때마다 콜백 함수를 호출하는데, 이때 콜백 함수의 this는 이벤트가 발생한 요소를 가리킴
+
+하지만 화살표 함수를 콜백 함수로 사용하면, this는 외부 렉시컬 환경의 this를 가리키므로, 원하는 결과가 나오지 않을 수 있음
+
+```javascript
+<button>Click me!</button>
+
+<script>
+let button = document.querySelector('button');
+
+button.addEventListener('click', function() {
+  console.log(this); // <button> 요소
+});
+
+button.addEventListener('click', () => {
+  console.log(this); // window 객체
+});
+</script>
+```
+
+<br>
+
+출처: https://inpa.tistory.com/entry/JS-📚-자바스크립트-화살표-함수-정리 [Inpa Dev 👨‍💻:티스토리]
+
 ## 객체 대입, 복사
 
-cloneObject, 전개연산자
-
-## Test
+변수를 ref, reactive로 초기화 했어도, a1에 a2를 대입하면 참조가 끊어져 a2의 값이 변해도 a1의 값은 화면에서 바로 변하지 않음
