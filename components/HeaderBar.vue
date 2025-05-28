@@ -19,8 +19,14 @@ const data = {
       path: 'project',
       menuList: [
         { title: 'Nuxt', path: 'nuxt' },
-        { title: 'Git', path: 'git' }
+        { title: 'Git', path: 'git' },
+        { title: 'Test', path: 'test' }
       ]
+    },
+    {
+      title: 'Function',
+      path: 'function',
+      menuList: [{ title: 'NoticeBoard', path: 'noticeboard' }]
     }
   ]
 };

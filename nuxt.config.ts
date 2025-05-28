@@ -40,6 +40,11 @@ export default defineNuxtConfig({
     }
   },
 
+  // 자동 import할 폴더
+  imports: {
+    dirs: ['types/**']
+  },
+
   // Vuetify 모듈 설정
   modules: ['vuetify-nuxt-module']
   // vuetify: {

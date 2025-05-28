@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import markdownContent from '~/public/markdown/TypeScript.md?raw';
+</script>
 
 <template>
   <div>
-    <h1>typescript page</h1>
+    <MarkdownContent :rawMarkdown="markdownContent"></MarkdownContent>
   </div>
 </template>
 
