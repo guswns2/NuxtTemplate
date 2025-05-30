@@ -2,13 +2,12 @@
 const runtimeConfig = useRuntimeConfig();
 const appConfig = useAppConfig();
 
-const data = {
-  layout: ref<'default' | 'login' | 'main'>('default')
-};
+// data
+const layout = ref<'default' | 'login' | 'main'>('default');
 
 // setup()
-data.layout.value = 'main';
-provide('layoutType', data.layout.value); // 하위 모든 페이지에서 inject로 받을 수 있음
+layout.value = 'main';
+provide('layoutType', layout.value); // 하위 모든 페이지에서 inject로 받을 수 있음
 onMounted(() => {
   runtimeConfig.public.apiBase = '/api2';
   appConfig.title = 'Hello Nuxt 2';
@@ -22,8 +21,8 @@ onMounted(() => {
     <!-- v-app: Vuetify 용. v-app-bar 사용 시 필요 -->
     <v-app>
       <NuxtLoadingIndicator />
-      <NuxtLayout :name="data.layout">
-        <NuxtPage class="nuxt-page" :style="[data.layout.value === 'main' ? 'margin-top: 64px;' : '']" />
+      <NuxtLayout :name="layout">
+        <NuxtPage class="nuxt-page" :style="[layout === 'main' ? 'margin-top: 64px;' : '']" />
       </NuxtLayout>
     </v-app>
   </div>

@@ -1,35 +1,33 @@
 <script setup lang="ts">
 const layoutType = inject('layoutType') as string;
 
-const data = {
-  menuList: [
-    {
-      title: 'Language',
-      path: 'language',
-      menuList: [
-        { title: 'HTML', path: 'html' },
-        { title: 'JavaScript', path: 'javascript' },
-        { title: 'TypeScript', path: 'typescript' },
-        { title: 'CSS', path: 'css' },
-        { title: 'SCSS', path: 'scss' }
-      ]
-    },
-    {
-      title: 'Project',
-      path: 'project',
-      menuList: [
-        { title: 'Nuxt', path: 'nuxt' },
-        { title: 'Git', path: 'git' },
-        { title: 'Test', path: 'test' }
-      ]
-    },
-    {
-      title: 'Function',
-      path: 'function',
-      menuList: [{ title: 'NoticeBoard', path: 'noticeboard' }]
-    }
-  ]
-};
+const menuList = [
+  {
+    title: 'Language',
+    path: 'language',
+    menuList: [
+      { title: 'HTML', path: 'html' },
+      { title: 'JavaScript', path: 'javascript' },
+      { title: 'TypeScript', path: 'typescript' },
+      { title: 'CSS', path: 'css' },
+      { title: 'SCSS', path: 'scss' }
+    ]
+  },
+  {
+    title: 'Project',
+    path: 'project',
+    menuList: [
+      { title: 'Nuxt', path: 'nuxt' },
+      { title: 'Git', path: 'git' },
+      { title: 'Test', path: 'test' }
+    ]
+  },
+  {
+    title: 'Function',
+    path: 'function',
+    menuList: [{ title: 'NoticeBoard', path: 'noticeboard' }]
+  }
+];
 
 const func = {
   onMoveRoute(layoutPath: string | null, mainPath: string | null, subPath: string | null) {
@@ -48,7 +46,7 @@ const func = {
       NuxtTemplate
     </v-app-bar-title>
 
-    <v-btn color="primary" v-for="(mainMenu, index) in data.menuList" :key="index" :value="mainMenu.path">
+    <v-btn color="primary" v-for="(mainMenu, index) in menuList" :key="index" :value="mainMenu.path">
       {{ mainMenu.title }}
 
       <v-menu activator="parent">
