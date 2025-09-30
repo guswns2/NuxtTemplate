@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     enabled: true
   },
 
-  // 개발 서버 port 설정
+  // Nuxt port 설정
   //  devServer: {
   //   port: 3001
   // },
@@ -22,6 +22,16 @@ export default defineNuxtConfig({
       alias: {
         // 파일 경로 별칭 설정
         '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    },
+    server: {
+      proxy: {
+        // /api로 시작하는 요청은 백엔드로 프록시
+        '/api': {
+          target: 'http://localhost:8081'
+          // changeOrigin: true // 요청 헤더의 Origin 및 Host 값을 대상 서버의 도메인으로 변경
+          // secure: false // SSL 인증서 검증을 생략하고 통과
+        }
       }
     },
     assetsInclude: ['**/*.md'] // 마크다운 파일을 문자열로 파싱
@@ -45,14 +55,14 @@ export default defineNuxtConfig({
     dirs: ['types/**']
   },
 
-  // Vuetify 모듈 설정
-  modules: ['vuetify-nuxt-module']
-  // vuetify: {
-  //   moduleOptions: {
-  //     /* module specific options */
-  //   },
-  //   vuetifyOptions: {
-  //     /* vuetify options */
-  //   }
-  // }
+  // 모듈 설정
+  modules: ['vuetify-nuxt-module', 'dayjs-nuxt'],
+
+  // dayjs 옵션 설정
+  dayjs: {
+    locales: ['ko', 'en'],
+    plugins: ['relativeTime', 'utc', 'timezone'],
+    defaultLocale: 'ko',
+    defaultTimezone: 'Korea/Seoul'
+  }
 });

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ClientOnly } from '#components';
+import { Suspense } from 'vue';
 
 // interface
 interface Notice {
@@ -19,7 +19,7 @@ const tableOptions = reactive<TableOptions<Notice>>({
     { title: '작성일', key: 'createdAt', align: 'center', sortable: true }
   ],
   sortBy: [],
-  items: [{ idx: 1, title: '제목1', userId: 'id1', createdAt: '2025-05-22 19:32:11', content: 'content1' }],
+  items: [],
   loading: true,
   page: 1,
   itemsPerPage: 10,
@@ -49,60 +49,51 @@ watch(
 );
 
 // func
-function loadItems({ page, itemsPerPage, sortBy }: Pick<TableOptions<Notice>, 'page' | 'itemsPerPage' | 'sortBy'>) {
+async function loadItems({ page, itemsPerPage, sortBy }: Pick<TableOptions<Notice>, 'page' | 'itemsPerPage' | 'sortBy'>) {
   tableOptions.loading = true;
-  FakeAPI.fetch({
-    page,
-    itemsPerPage,
-    sortBy,
-    searchs: {
-      title: tableOptions.searchs.title,
-      userId: tableOptions.searchs.userId
-    }
-  }).then(({ items, total }) => {
-    tableOptions.items = items;
-    tableOptions.itemsLength = total;
-    tableOptions.loading = false;
-  });
+  await getNoticeList();
 }
-const FakeAPI = {
-  async fetch({ page, itemsPerPage, sortBy, searchs }: Pick<TableOptions<Notice>, 'page' | 'itemsPerPage' | 'sortBy' | 'searchs'>): Promise<Response1<Notice>> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const start = (page - 1) * itemsPerPage;
-        const end = start + itemsPerPage;
-        const items = tableOptions.items.slice().filter((item) => {
-          if (searchs.title && !item.title.toLowerCase().includes(searchs.title.toLowerCase())) {
-            return false;
-          }
-          if (searchs.userId && !item.userId.toLowerCase().includes(searchs.userId.toLowerCase())) {
-            return false;
-          }
-          return true;
-        });
+async function getNoticeList() {
+  let url = `/api9/getNoticeList`;
+  let params = {
+    title: tableOptions.searchs.title,
+    userId: tableOptions.searchs.userId
+  };
+  let result = [] as Notice[];
+  let response;
 
-        if (sortBy.length) {
-          const sortKey = sortBy[0].key;
-          const sortOrder = sortBy[0].order;
-          items.sort((a, b) => {
-            const aValue = Number(a[sortKey]);
-            const bValue = Number(b[sortKey]);
-            return sortOrder === 'desc' ? bValue - aValue : aValue - bValue;
-          });
-        }
-
-        const paginated = items.slice(start, end === -1 ? undefined : end);
-        resolve({ items: paginated, total: items.length });
-      }, 500);
-    });
+  try {
+    response = await RestfulService.GET<ResBaseDataApi<Notice[]>>(url, params);
+  } catch (e) {
+    utils.log('API 호출 오류:', e);
+    return result;
   }
-};
 
-function getNoticeList() {}
+  if (!response || !response.recvData) {
+    utils.log('응답 데이터가 없습니다.', response);
+    return result;
+  }
+
+  if (!utils.isEmpty(response.recvData.code) && response.recvData.code === 200) {
+    if (utils.isEmpty(response.recvData.data) || response.recvData.data.length <= 0) {
+      utils.log('게시글 목록이 비어있습니다.');
+    }
+
+    tableOptions.items = response.recvData.data;
+  }
+
+  tableOptions.loading = false;
+  return result;
+}
+
+// setup()
+// const { data } = await useFetch('/api/hello');
+// const { data } = await useFetch('/api9/getNoticeList');
 </script>
 
 <template>
   <div>
+    <!-- <Suspense> -->
     <v-data-table-server
       v-model:items-per-page="tableOptions.itemsPerPage"
       :headers="tableOptions.headers"
@@ -124,6 +115,7 @@ function getNoticeList() {}
         </tr>
       </template>
     </v-data-table-server>
+    <!-- </Suspense> -->
   </div>
 </template>
 
