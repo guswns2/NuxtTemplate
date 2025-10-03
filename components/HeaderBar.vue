@@ -88,20 +88,6 @@ const func = {
       NuxtTemplate
     </v-app-bar-title>
 
-    <!-- <v-menu v-for="(mainMenu, index) in menuList" :key="index" :value="mainMenu.path">
-      <template v-slot:activator="{ props }">
-        <v-btn color="primary" v-bind="props">
-          {{ mainMenu.title }}
-        </v-btn>
-      </template>
-
-      <v-list>
-        <v-list-item v-for="(subMenu, index) in mainMenu.menuList" :key="index" :value="subMenu.path">
-          <v-list-item-title @click="func.onMoveRoute(layoutType, mainMenu.path, subMenu.path, null)">{{ subMenu.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu> -->
-
     <v-menu v-for="(mainMenu, index) in mainMenuList" :key="index">
       <template v-slot:activator="{ props }">
         <v-btn color="primary" v-bind="props">
