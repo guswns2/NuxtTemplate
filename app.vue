@@ -11,8 +11,9 @@ provide('layoutType', layout.value); // 하위 모든 페이지에서 inject로 
 onMounted(() => {
   runtimeConfig.public.apiBase = '/api2';
   appConfig.title = 'Hello Nuxt 2';
-  utils.log(runtimeConfig.public.apiBase);
-  utils.log(appConfig.title);
+
+  utils.log('runtimeConfig.public.apiBase : ' + runtimeConfig.public.apiBase);
+  utils.log('appConfig.title : ' + appConfig.title);
 });
 </script>
 
@@ -21,6 +22,7 @@ onMounted(() => {
     <!-- v-app: Vuetify 용. v-app-bar 사용 시 필요 -->
     <v-app>
       <NuxtLoadingIndicator />
+
       <NuxtLayout :name="layout">
         <NuxtPage class="nuxt-page" :style="[layout === 'main' ? 'margin-top: 64px;' : '']" />
       </NuxtLayout>

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { Suspense } from 'vue';
-
-// interface
 interface Notice {
   idx: number;
   title: string;
@@ -9,8 +6,6 @@ interface Notice {
   createdAt: string;
   content: string;
 }
-
-// data
 const tableOptions = reactive<TableOptions<Notice>>({
   headers: [
     { title: '번호', key: 'idx', align: 'center', sortable: true },
@@ -30,7 +25,6 @@ const tableOptions = reactive<TableOptions<Notice>>({
   },
   itemsLength: 0
 });
-
 // watch
 // :search="tableOption.search" 로 바인딩 되어 있으므로
 // 테이블 검색필터 입력을 실시간 감지하여 tableOption.search를 변화시켜
@@ -47,8 +41,6 @@ watch(
     tableOptions.search = String(Date.now());
   }
 );
-
-// func
 async function loadItems({ page, itemsPerPage, sortBy }: Pick<TableOptions<Notice>, 'page' | 'itemsPerPage' | 'sortBy'>) {
   tableOptions.loading = true;
   await getNoticeList();
@@ -87,13 +79,10 @@ async function getNoticeList() {
 }
 
 // setup()
-// const { data } = await useFetch('/api/hello');
-// const { data } = await useFetch('/api9/getNoticeList');
 </script>
 
 <template>
   <div>
-    <!-- <Suspense> -->
     <v-data-table-server
       v-model:items-per-page="tableOptions.itemsPerPage"
       :headers="tableOptions.headers"
@@ -115,7 +104,6 @@ async function getNoticeList() {
         </tr>
       </template>
     </v-data-table-server>
-    <!-- </Suspense> -->
   </div>
 </template>
 
