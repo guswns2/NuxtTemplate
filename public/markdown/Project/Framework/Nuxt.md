@@ -137,3 +137,13 @@ onUpdated(): DOM 업데이트 직후
 onBeforeUnmount(): 컴포넌트가 제거되기 직전
 
 onUnmounted(): 컴포넌트가 완전히 제거된 후
+
+## BackEnd API 호출
+
+### Directory
+
+/server/api: API 등록
+
+/server/middleware: 미들웨어 핸들러는 헤더를 추가하거나 확인하고, 요청을 기록하거나, 이벤트의 요청 객체를 확장하기 위해 다른 서버 경로보다 먼저 모든 요청에 ​​대해 실행
+
+fetch, axios
