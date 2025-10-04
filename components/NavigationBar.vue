@@ -67,7 +67,9 @@ const mainMenuList: Menu[] = [
   }
 ];
 function onMoveRoute(layoutPath: string | null, mainMenu: Menu | null, subMenu: Menu | null, childMenu: Menu | null) {
-  utils.log(layoutPath, mainMenu, subMenu, childMenu);
+  // utils.log(layoutPath, mainMenu, subMenu, childMenu);
+
+  if (subMenu && subMenu.children && !childMenu) return;
 
   let path: string = `/${layoutPath}`;
   if (mainMenu && typeof mainMenu.path === 'string') path += `/${mainMenu.path}`;
@@ -85,7 +87,6 @@ function filter(value: string, search: string, item?: object) {
   // utils.log('filter : ' + value, search, item);
   return caseSensitive.value ? value.indexOf(search) > -1 : value.toLowerCase().indexOf(search.toLowerCase()) > -1;
 }
-
 function onActivated(val: unknown) {
   // update:activated는 배열을 반환
   // val이 배열인지 검증
