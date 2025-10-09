@@ -1,6 +1,44 @@
 # Git
 
-## GitHub 연동
+## Git이란?
+
+## Working directory, Staging Area, Repository
+
+## 로컬 vs 원격
+
+## 브랜치 관리
+
+### branch, checkout, merge, -d
+
+## 원격 저장소 작업
+
+### remote, push, pull, fetch
+
+## 이력 수정
+
+### rebase, reset, revert, cherry-pick
+
+## 충돌 해결
+
+### stash, tag, diff, blame
+
+## 협업 전략
+
+### Git Flow, GitHub Flow, Trunk-based Development
+
+## Pull Request, Merge Request
+
+### 코드 리뷰 프로세스
+
+### 브랜치 전략
+
+## 커밋 컨벤션
+
+### 좋은 커밋 메시지 작성법
+
+### Conventional Commits
+
+## VSCode - GitHub 연동
 
 GitHub 레퍼지토리 생성
 
