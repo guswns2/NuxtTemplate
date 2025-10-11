@@ -66,7 +66,7 @@ const mainMenuList: Menu[] = [
     children: [{ id: 17, title: 'NoticeBoard', path: 'noticeboard' }]
   }
 ];
-function onMoveRoute(layoutPath: string | null, mainMenu: Menu | null, subMenu: Menu | null, childMenu: Menu | null) {
+function onMoveRoute(layoutPath: string | null, mainMenu: Menu | null, subMenu: Menu | null, childMenu: Menu | null): void {
   // utils.log(layoutPath, mainMenu, subMenu, childMenu);
 
   if (subMenu && subMenu.children && !childMenu) return;
@@ -82,18 +82,18 @@ function onMoveRoute(layoutPath: string | null, mainMenu: Menu | null, subMenu: 
 // Side
 const search = shallowRef('');
 const caseSensitive = shallowRef(false); // 대소문자 구분
-function filter(value: string, search: string, item?: object) {
+function filter(value: string, search: string, item?: object): boolean {
   // value: Menu.title, search: 사용자의 입력값, item: Menu object
   // utils.log('filter : ' + value, search, item);
   return caseSensitive.value ? value.indexOf(search) > -1 : value.toLowerCase().indexOf(search.toLowerCase()) > -1;
 }
-function onActivated(val: unknown) {
+function onActivated(val: unknown): void {
   // update:activated는 배열을 반환
   // val이 배열인지 검증
   const menuIdList = Array.isArray(val) ? (val as number[]) : [];
   if (menuIdList.length) onTreeItemClick(menuIdList[0]);
 }
-function onTreeItemClick(menuId: number) {
+function onTreeItemClick(menuId: number): void {
   const result = findMenuPath(mainMenuList, menuId);
 
   if (result) {
