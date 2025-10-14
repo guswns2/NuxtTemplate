@@ -53,8 +53,8 @@ const mainMenuList: Menu[] = [
       },
       {
         id: 14,
-        title: 'SCM',
-        path: 'scm',
+        title: 'VCS',
+        path: 'vcs',
         children: [{ id: 15, title: 'Git', path: 'git' }]
       }
     ]
