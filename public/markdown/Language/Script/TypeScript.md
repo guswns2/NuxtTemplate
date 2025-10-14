@@ -1,5 +1,17 @@
 # TypeScript
 
+## TypeScript란?
+
+JavaScript에 타입 시스템을 추가한 프로그래밍 언어. JavaScript의 확장판
+
+코드 작성 중에 오류 발견 가능
+
+자동 완성 기능 향상
+
+코드 이해 쉬움
+
+리팩토링 수월
+
 ## 기본 타입
 
 ### tuple
