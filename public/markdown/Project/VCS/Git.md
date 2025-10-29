@@ -73,6 +73,8 @@ GitHub Flow: main(항상 배포 가능한 상태), feature(모든 작업용)
 
 ## 코드 버전 관리
 
+merge test1
+
 ```bash
 # 변경사항 기록
 git commit -m "msg"    # 스테이징 영역의 변경사항을 로컬 레퍼지토리에 기록
