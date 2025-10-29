@@ -192,5 +192,3 @@ sub branch 게시
 .github/ISSUE_TEMPLATE/bug_report.md, feature_request.md
 
 .github/pull-request_template.md
-
-## Merge, Rebase
