@@ -5,3 +5,7 @@ merge test
 3. sub1에서 commit, sub2에서 commit 후 merge => 충돌 편집기에서 해결 후 병합 됨
 
 rebase test2
+
+reset test2
+
+revert test
