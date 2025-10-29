@@ -1,1 +1,2 @@
-merge test1
+merge test
+sub2 commit
