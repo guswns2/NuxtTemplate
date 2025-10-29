@@ -11,4 +11,3 @@ reset test2
 revert test
 
 1. 직전 커밋 되돌리는 revert
-2. 두 개 이전 커밋으로 되돌리는 revert
