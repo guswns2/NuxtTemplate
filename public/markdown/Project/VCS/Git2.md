@@ -9,3 +9,5 @@ rebase test2
 reset test2
 
 revert test
+
+1. 직전 커밋 되돌리는 revert
