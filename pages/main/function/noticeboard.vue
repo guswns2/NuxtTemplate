@@ -41,17 +41,17 @@ watch(
     tableOptions.search = String(Date.now());
   }
 );
-async function loadItems({ page, itemsPerPage, sortBy }: Pick<TableOptions<Notice>, 'page' | 'itemsPerPage' | 'sortBy'>) {
+async function loadItems({ page, itemsPerPage, sortBy }: Pick<TableOptions<Notice>, 'page' | 'itemsPerPage' | 'sortBy'>): Promise<void> {
   tableOptions.loading = true;
   await getNoticeList();
 }
-async function getNoticeList() {
+async function getNoticeList(): Promise<Notice[]> {
   let url = `/api9/getNoticeList`;
   let params = {
     title: tableOptions.searchs.title,
     userId: tableOptions.searchs.userId
   };
-  let result = [] as Notice[];
+  let result: Notice[] = [];
   let response;
 
   try {
