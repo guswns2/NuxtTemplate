@@ -117,7 +117,7 @@ git rebase sub2 실행 시:
 sub2: A - B - C
 sub1: A - B - C - D' - E'
 
-이미 push한 공개 브랜치를 rebase 하면 안 됨
+이미 push한 공개 브랜치를 rebase 하면 안 됨. 히스토리가 변경되기 때문에 충돌 가능성, 작업 내용 손실 위험 높음
 
 ### reset
 
