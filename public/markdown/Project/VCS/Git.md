@@ -109,6 +109,14 @@ git restore    # 파일을 특정상태로 복원(최신 방식)
 
 ### rebase
 
+sub2: A - B - C
+sub1: A - B - D - E
+└─ 여기서 분기
+
+git rebase sub2 실행 시:
+sub2: A - B - C
+sub1: A - B - C - D' - E'
+
 이미 push한 공개 브랜치를 rebase 하면 안 됨
 
 ### reset
