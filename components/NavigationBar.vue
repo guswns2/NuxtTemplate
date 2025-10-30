@@ -56,14 +56,20 @@ const mainMenuList: Menu[] = [
         title: 'VCS',
         path: 'vcs',
         children: [{ id: 15, title: 'Git', path: 'git' }]
+      },
+      {
+        id: 16,
+        title: 'Release',
+        path: 'release',
+        children: [{ id: 17, title: 'CI/CD', path: 'cicd' }]
       }
     ]
   },
   {
-    id: 16,
+    id: 18,
     title: 'Function',
     path: 'function',
-    children: [{ id: 17, title: 'NoticeBoard', path: 'noticeboard' }]
+    children: [{ id: 19, title: 'NoticeBoard', path: 'noticeboard' }]
   }
 ];
 function onMoveRoute(layoutPath: string | null, mainMenu: Menu | null, subMenu: Menu | null, childMenu: Menu | null): void {

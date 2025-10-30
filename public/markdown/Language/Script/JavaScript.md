@@ -297,7 +297,9 @@ const text3 = undefined ?? '기본값'; // '기본값'
 
 ### async-await
 
-JavaScript는 Single Thread로 동기식으로 처리되지만, setTImeout이나 async 함수 같이 비동기 함수가 실행될 때는 비동기식으로 처리되도록 구성되어있음(Call Stack, Web API, Task Que, Event Loop)
+JavaScript는 Single Thread로 동기식으로 처리됨. 한 번에 한 줄씩 순차적으로 실행됨. setTImeout이나 async 함수 같이 비동기 함수가 실행될 때는 비동기식으로 처리되도록 구성되어있음(Call Stack, Web API, Task Que, Event Loop)
+
+함수 앞에 async를 붙이면 항상 프로미스를 결과로 반환하고 함수를 비동기 함수로 만듦. await는 프로미스가 처리될 때까지 기다린 후 결과 반환. await는 함수 내부 실행을 잠시 멈추는 것이지, 전체 프로그램 실행을 멈추는 게 아님. 이벤트 루프가 다른 작업(UI렌더링, 다른 네트워크 요청 등)을 계속 진행함
 
 따라서 함수 내에 axios 호출(async-await)이 포함되어있으면 async-await를 걸어두지 않으면 비동기로 처리되기 때문에 응답을 제대로 활용할 수 없음
 
