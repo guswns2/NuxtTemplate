@@ -12,4 +12,4 @@
 
 ## reflog test
 
-1. reset 후 reflog 기록을 활용해 reset 이전으로 복구 =>
+1. reset 후 reflog 기록을 활용해 reset 이전으로 복구 => 1
