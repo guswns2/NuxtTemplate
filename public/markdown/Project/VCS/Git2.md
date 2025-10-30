@@ -16,4 +16,4 @@
 
 ## restore test
 
-1. 특정 커밋으로 restore 1
+1. 특정 커밋으로 restore 1 2
