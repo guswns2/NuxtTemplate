@@ -9,3 +9,5 @@ rebase test
 reset test
 
 1. 특정 커밋으로 reset => 해당 커밋의 변경 후 내용으로 복구됨. 그 후에 변경됐던 내용들은 변경사항으로 남아있음
+
+reflog test

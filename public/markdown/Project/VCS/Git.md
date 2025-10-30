@@ -83,7 +83,7 @@ git rebase main    # 현재 브랜치를 main 위에 재배치. 선형 히스토
 
 # 변경사항 복구
 git reset    # HEAD와 현재 브랜치를 특정 커밋으로 이동. 히스토리를 변경
-git reflog    # 복구 이전 상태로 되돌림
+git reflog    # HEAD와 브랜치 참조가 변경된 이력 기록. 로컬 기록만
 git revert    # 특정 커밋을 되돌리는 새로운 커밋 생성. 히스토리 생성
 git restore    # 파일을 특정상태로 복원(최신 방식)
 ```
