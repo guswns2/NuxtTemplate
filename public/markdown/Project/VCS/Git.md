@@ -161,6 +161,9 @@ git restore --staged file.txt
 
 # 둘 다 복원
 git restore -SW file.txt
+
+# 특정 커밋의 파일로 복원
+git restore --source=HEAD~2 file.txt
 ```
 
 ## 로컬 - 원격 저장소 관리
