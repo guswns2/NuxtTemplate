@@ -15,3 +15,5 @@
 1. reset 후 reflog 확인. 다시 reset을 사용하여 첫 reset된 커밋을 복구
 
 ## restore test
+
+1. 특정 커밋으로 restore 1
